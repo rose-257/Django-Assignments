@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+    
+        }
+        .form-container{
+            width:400px;
+            background-color:rgba(169, 166, 166,0.8);
+            padding: 20px;
+        }
+        input{
+            margin-bottom: 10px;      
+        }
+        .image{
+            background-size: cover;
+            background-image: url('https://media.istockphoto.com/id/1470544060/photo/group-of-university-students-e-learning-on-laptop-at-campus.jpg?s=612x612&w=0&k=20&c=cwuT0WSg2xzQ0MhFzt2EbIL33IcS40-Mb3htuy9B0v0=');
+        }
+        .container{
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 100px;
+            width: fit-content;
+        }
+        body{
+            background-size: cover;
+            background-image: url('https://as1.ftcdn.net/v2/jpg/02/12/13/08/1000_F_212130873_THdnz3N0Buh9ZNq2iLjqxZyKj75rJpxd.jpg');
+        }
+        .title{
+            color: white;
+            background-color: rgba(0,0,0,0.5);
+        }
+        
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center title">LOGIN</h1>
+            <div class="form-container">
+                <form method="POST" action="/userlog/" enctype="multipart/form-data">
+                    {%csrf_token%}  
+                    <label for="">Email</label>
+                    {{form.email}}
+                    <label for="">Password</label>
+                    <div class="password">
+                        {{form.password}}
+                    </div>
+                    <button class="btn btn-dark form-control" type="submit">LOGIN</button>
+                    <div style="color: red;">
+                        {{ce}}
+                    </div>
+                </form>
+            </div>
+    </div>
+</body>
+</html>
